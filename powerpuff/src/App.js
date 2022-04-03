@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 import Navigation from './Navigation';
-import UserAndPassword from './Forms';
+import UserAndPassword from './UserAndPassword';
 import {Switch, Route, useHistory} from 'react-router-dom';
 import TwitterService from './services/twitterService';
 import HomeAdmin from './HomeAdmin';
 import ViewTweets from './viewTweets';
 import CreateTweet from './createTweet';
 import TwitterActions from './TwitterActions';
+import DeleteTweets from './deleteTweets';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -40,6 +41,9 @@ const App = () => {
           </Route>
           <Route path="/create_tweet">
             <CreateTweet/>
+          </Route>
+          <Route path="/delete_tweets">
+            <DeleteTweets/>
           </Route>
           <Route path="/">
             <Container className="w-75 pt-5">

@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {Button} from 'react-bootstrap';
 import {Switch, Route, useHistory} from 'react-router-dom';
-import viewTweets from './viewTweets';
-import createTweet from './createTweet';
+import ViewTweets from './viewTweets';
+import CreateTweet from './createTweet';
+import DeleteTweets from './deleteTweets';
 
 const TwitterActions = () =>{
 
@@ -20,13 +21,19 @@ const TwitterActions = () =>{
                         <Button variant="primary" size="lg" onClick={() => handleClick("/create_tweet")}>
                             Create Tweet
                         </Button>
+                        <Button variant="primary" size="lg" onClick={() => handleClick("/delete_tweets")}>
+                            Delete Tweets
+                        </Button>
                     </div>
                 </Route>
                 <Route path="/view_tweets">
-                    <viewTweets/>
+                    <ViewTweets/>
                 </Route>
                 <Route path="/create_tweet">
-                    <createTweet/>
+                    <CreateTweet/>
+                </Route>
+                <Route path="/delete_tweets">
+                    <DeleteTweets/>
                 </Route>
             </Switch>
         </div>
