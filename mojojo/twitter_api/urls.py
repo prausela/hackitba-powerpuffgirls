@@ -20,7 +20,16 @@ from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/create_tweet', views.create_tweet, name='create_tweet'),
-    path('api/delete_tweet', views.delete_tweet, name='delete_tweet'),
+    path('twitter/create_tweet', views.create_tweet, name='create_tweet'),
+    path('twitter/delete_tweet', views.delete_tweet, name='delete_tweet'),
+    path('twitter/like', views.like_tweet, name='like_tweet'),
+    path('twitter/unlike', views.unlike_tweet, name='unlike_tweet'),
+    path('twitter/likes', views.see_likes, name='see_likes'),
+    path('twitter/unretweet', views.unretweet, name='unretweet'),
+    path('twitter/retweet', views.retweet, name='retweet'),
+    path('twitter/follow', views.follow, name='follow'),
+    path('twitter/unfollow', views.unfollow, name='unfollow'),
+    path('twitter/search', views.search, name='search'),
+    path('new_user', views.new_user, name='new_user')
 
 ]
