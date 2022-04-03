@@ -4,6 +4,9 @@ import Navigation from './Navigation';
 import UserAndPassword from './Forms';
 import {Switch, Route, useHistory} from 'react-router-dom';
 import HomeAdmin from './HomeAdmin';
+import ViewTweets from './viewTweets';
+import CreateTweet from './createTweet';
+import TwitterActions from './TwitterActions';
 
 
 const App = () => {
@@ -26,14 +29,20 @@ const App = () => {
           <Route path="/about">
             about
           </Route>
-          <Route path="/topics">
-            Topics
+          <Route path="/twitter">
+            <TwitterActions/>
           </Route>
           <Route path="/home">
             <HomeAdmin/>
           </Route>
+          <Route path="/view_tweets">
+            <ViewTweets/>
+          </Route>
+          <Route path="/create_tweet">
+            <CreateTweet/>
+          </Route>
           <Route path="/">
-            <Container className="w-50 pt-5">
+            <Container className="w-75 pt-5">
               <Card >
                 <Card.Header>Welcome</Card.Header>
                 <Card.Body>
