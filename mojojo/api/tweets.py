@@ -55,3 +55,7 @@ class TwitterClient:
 	def get_tweet(self,id):
 		return self.client.get_tweet(id=id)
 
+	def see_user_tweets(self,user):
+		u = self.client.get_user(username=user)
+		return self.client.get_users_tweets(id=u.data.id)
+

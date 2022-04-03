@@ -1,0 +1,90 @@
+[
+  {
+    "model": "api.action",
+    "pk": 1,
+    "fields": {
+      "name": "create_tweet",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 2,
+    "fields": {
+      "name": "delete_tweet",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 3,
+    "fields": {
+      "name": "like_tweet",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 4,
+    "fields": {
+      "name": "unlike_tweet",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 5,
+    "fields": {
+      "name": "see_likes",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 6,
+    "fields": {
+      "name": "unretweet",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 7,
+    "fields": {
+      "name": "retweet",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 8,
+    "fields": {
+      "name": "follow",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 9,
+    "fields": {
+      "name": "unfollow",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 10,
+    "fields": {
+      "name": "search",
+      "social_network": "Twitter"
+    }
+  },
+  {
+    "model": "api.action",
+    "pk": 11,
+    "fields": {
+      "name": "see_user_tweets",
+      "social_network": "Twitter"
+    }
+  }
+]

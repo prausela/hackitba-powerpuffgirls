@@ -30,6 +30,10 @@ urlpatterns = [
     path('twitter/follow', views.follow, name='follow'),
     path('twitter/unfollow', views.unfollow, name='unfollow'),
     path('twitter/search', views.search, name='search'),
-    path('new_user', views.new_user, name='new_user')
+    path('twitter/tweets', views.see_user_tweets, name='see_user_tweets'),
+    path('new_user', views.new_user, name='new_user'),
+    path('delete_user', views.delete_user, name='delete_user'),
+    path('show_actions', views.show_actions, name='show_actions'),
+    path('show_users', views.show_users, name='show_users')
 
 ]
