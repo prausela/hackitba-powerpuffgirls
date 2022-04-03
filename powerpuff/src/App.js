@@ -3,6 +3,7 @@ import { Container, Card, Button } from 'react-bootstrap';
 import Navigation from './Navigation';
 import UserAndPassword from './Forms';
 import {Switch, Route, useHistory} from 'react-router-dom';
+import TwitterService from './services/twitterService';
 
 const App = () => {
   const [count, setCount] = useState(0);
