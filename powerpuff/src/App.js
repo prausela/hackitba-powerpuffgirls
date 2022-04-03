@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 import Navigation from './Navigation';
 import UserAndPassword from './Forms';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, useHistory} from 'react-router-dom';
 
 const App = () => {
   const [count, setCount] = useState(0);
-  const incrementCounter = () => {
-    return setCount(count+1);
-  }
+  const incrementCounter = () => setCount(count+1)
+  
+  const [name, setName] = useState("");
+  const history = useHistory(); 
+  const handleClick = () => history.push("/home")
+
   return (
     <>
       <header>
@@ -24,13 +27,16 @@ const App = () => {
           <Route path="/topics">
             Topics
           </Route>
+          <Route path="/home">
+            Home
+          </Route>
           <Route path="/">
             <Container className="w-50 pt-5">
               <Card >
                 <Card.Header>Welcome</Card.Header>
                 <Card.Body>
-                  <UserAndPassword/>
-                  <Button variant="primary">Log In</Button>
+                  <UserAndPassword setName={setName} name={name}/>
+                  <Button variant="primary" onClick={handleClick}>Log In</Button>
                 </Card.Body>
               </Card>
             </Container>

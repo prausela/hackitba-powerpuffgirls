@@ -1,7 +1,5 @@
 import tweepy
-from requests_oauthlib import OAuth1Session
 
-url = 'https://api.twitter.com/oauth/request_token'
 consumer_key = "P6IUTm5Fl8tsxukCSgdAnIDDl"
 consumer_secret = "kzjcp21dVrLTi0PRzZgPCu2bZBgiD4ZolJi4r84yzHtfxw5Uw1"
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAHMvbAEAAAAA%2BqYDsL6HNEgIEVazrmOLhNjQiiE%3Di280A9XsQqtAxZHk7ymKJ3OcwN0741zehZmfmdUdAvWvyU3pgI"
@@ -14,23 +12,12 @@ class TwitterClient:
 		self.consumer_secret = consumer_secret
 		self.access_token = access_token
 		self.access_token_secret = access_token_secret
+		self.bearer_token = bearer_token
 		self.client = tweepy.Client(consumer_key=self.consumer_key,
 			consumer_secret=self.consumer_secret,
 			access_token=self.access_token,
-			access_token_secret=self.access_token_secret)
-
-	def create_client(self):
-		token = OAuth1Session(client_key=self.consumer_key,
-			client_secret=self.consumer_secret)
-		data = str.split((token.get(url)).text,'&')
-		key = str.split(data[0], '=')
-		secret = str.split(data[1], '=')
-		self.access_token = key[1]
-		self.access_token_secret = secret[1]
-		self.client = tweepy.Client(consumer_key=self.consumer_key,
-			consumer_secret=self.consumer_secret,
-			access_token=self.access_token,
-			access_token_secret=self.access_token_secret)
+			access_token_secret=self.access_token_secret,
+			bearer_token=self.bearer_token)
 
 	def create_tweet(self,text):
 		self.client.create_tweet(text=text)
@@ -38,10 +25,33 @@ class TwitterClient:
 	def delete_tweet(self,id):
 		self.client.delete_tweet(id=id)
 
-	def hide_replies(self,id):
-		self.client.hide_reply(id=id)
-
 	def unretweet(self,id):
 		self.client.unretweet(source_tweet_id=id)
 
+	def like_tweet(self,id):
+		self.client.like(tweet_id=id)
+
+	def unlike_tweet(self,id):
+		self.client.unlike(tweet_id=id)
+
+	def get_liked_tweets(self,user):
+		u = self.client.get_user(username=user)
+		return self.client.get_liked_tweets(id=u.data.id)
+
+	def search_recent(self,term):
+		return self.client.search_recent_tweets(query=term)
+
+	def retweet(self,id):
+		self.client.retweet(tweet_id=id)
+
+	def follow(self,user):
+		u = self.client.get_user(username=user)
+		self.client.follow_user(target_user_id=u.data.id)
+
+	def unfollow(self,user):
+		u = self.client.get_user(username=user)
+		self.client.unfollow_user(target_user_id=u.data.id)
+
+	def get_tweet(self,id):
+		return self.client.get_tweet(id=id)
 
