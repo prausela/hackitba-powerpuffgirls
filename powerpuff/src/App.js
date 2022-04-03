@@ -13,7 +13,7 @@ import FollowUser from './followUser';
 import UnfollowUser from './unfollowUser';
 import Retweet from './retweet';
 import LikeTweet from './likeTweet';
-import newUser from './newUser';
+import NewUser from './newUser';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -42,7 +42,7 @@ const App = () => {
             <HomeAdmin/>
           </Route>
           <Route path="/new_user">
-            <newUser/>
+            <NewUser/>
           </Route>
           <Route path="/view_tweets">
             <ViewTweets/>
