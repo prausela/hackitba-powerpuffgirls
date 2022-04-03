@@ -16,48 +16,29 @@ const TwitterActions = () =>{
 
     return(
         <div>
-            <Switch>
-                <Route path="/">
-                    <div className="px-1 d-grid gap-1 pt-1 flex-grow-1">
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/view_tweets")}>
-                            View Tweets
-                        </Button>
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/create_tweet")}>
-                            Create Tweet
-                        </Button>
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/retweet")}>
-                            Retweet
-                        </Button>
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/like_tweet")}>
-                            Like Tweet
-                        </Button>
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/delete_tweets")}>
-                            Delete Tweets
-                        </Button>
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/follow_user")}>
-                            Follow User
-                        </Button>
-                        <Button variant="primary" size="lg" onClick={() => handleClick("/unfollow_user")}>
-                            Unfollow User
-                        </Button>
-                    </div>
-                </Route>
-                <Route path="/view_tweets">
-                    <ViewTweets/>
-                </Route>
-                <Route path="/create_tweet">
-                    <CreateTweet/>
-                </Route>
-                <Route path="/delete_tweets">
-                    <DeleteTweets/>
-                </Route>
-                <Route path="/follow_user">
-                    <FollowUser/>
-                </Route>
-                <Route path="/unfollow_user">
-                    <UnfollowUser/>
-                </Route>
-            </Switch>
+            <div className="px-1 d-grid gap-1 pt-1 flex-grow-1">
+                <Button variant="primary" size="lg" onClick={() => handleClick("/view_tweets")}>
+                    View Tweets
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => handleClick("/create_tweet")}>
+                    Create Tweet
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => handleClick("/retweet")}>
+                    Retweet
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => handleClick("/like_tweet")}>
+                    Like Tweet
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => handleClick("/delete_tweets")}>
+                    Delete Tweets
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => handleClick("/follow_user")}>
+                    Follow User
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => handleClick("/unfollow_user")}>
+                    Unfollow User
+                </Button>
+            </div>
         </div>
     )}
 

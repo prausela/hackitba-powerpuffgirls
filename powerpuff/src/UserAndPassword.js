@@ -6,8 +6,8 @@ const UserAndPassword = ({name, setName}) => {
     return(
         <Form>
         <Form.Group className="mb-3" controlId="formGroupEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Label>User</Form.Label>
+            <Form.Control type="username" placeholder="Enter username" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGroupPassword">
             <Form.Label>Password</Form.Label>

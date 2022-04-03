@@ -10,6 +10,7 @@ const HomeAdmin = () => {
     const addUser = () => userArray = [["Name 0", 0], ["Name 1", 1], ["Name 2", 2], ["Name 3", 3], ["Name 4", 4]];
     const history = useHistory(); 
     const Twitter = () => history.push("/twitter")
+    const createUser = () => history.push("/new_user")
 
     return(
     <>
@@ -28,7 +29,7 @@ const HomeAdmin = () => {
                     </Accordion.Item>)})}
                 </Accordion>
                 <div className="d-grid gap-2 pt-3">
-                    <Button variant="primary" size="lg">
+                    <Button variant="primary" size="lg" onClick={createUser}>
                         New User
                     </Button>
                 </div>
