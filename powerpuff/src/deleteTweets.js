@@ -60,9 +60,11 @@ const DeleteTweets = () =>{
                         </Card.Text>
                         {item['timestamp']}
                     </Card.Body>
-                    <Button>
-                        <i class="fa-solid fa-trash-can"></i>
-                    </Button>
+                    <div className='d-flex justify-content-end pb-2'>
+                        <Button variant="danger">
+                            Delete
+                        </Button>
+                    </div>
                 </div>
             </Card>
         )})}
