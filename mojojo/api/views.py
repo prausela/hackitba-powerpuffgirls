@@ -6,17 +6,16 @@ from .tweets import TwitterClient
 from .models import User
 from .models import Action
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
-
-
-#TWITTER ENDPOINTS
-
+@csrf_exempt
 @api_view(['POST'])
 def create_tweet(request):
 	client = TwitterClient()
 	client.create_tweet(request.data.get('tweet'))
 	return Response({"message": "Successfully posted", "tweet": request.data.get('tweet')}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['DELETE'])
 def delete_tweet(request):
 	client = TwitterClient()
@@ -24,6 +23,7 @@ def delete_tweet(request):
 	client.delete_tweet(request.GET.get('id', 0))
 	return Response({"message": "Successfully deleted", "tweet": tweet}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['POST'])
 def like_tweet(request):
 	client = TwitterClient()
@@ -31,6 +31,7 @@ def like_tweet(request):
 	client.like_tweet(request.GET.get('id', 0))
 	return Response({"message": "Successfully liked.", "tweet": tweet}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['DELETE'])
 def unlike_tweet(request):
 	client = TwitterClient()
@@ -38,11 +39,13 @@ def unlike_tweet(request):
 	client.unlike_tweet(request.GET.get('id', 0))
 	return Response({"message": "Successfully unliked.", "tweet": tweet}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['GET'])
 def see_likes(request):
 	client = TwitterClient()
 	return Response({"likes": client.get_liked_tweets(request.GET.get('user', 0))}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['DELETE'])
 def unretweet(request):
 	client = TwitterClient()
@@ -50,6 +53,7 @@ def unretweet(request):
 	client.unretweet(request.GET.get('id', 0))
 	return Response({"message": "Successfully unretweeted.", "tweet": tweet}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['POST'])
 def retweet(request):
 	client = TwitterClient()
@@ -57,18 +61,21 @@ def retweet(request):
 	client.retweet(request.GET.get('id', 0))
 	return Response({"message": "Successfully retweeted.", "tweet": tweet}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['DELETE'])
 def unfollow(request):
 	client = TwitterClient()
 	client.unfollow(request.GET.get('user', 0))
 	return Response({"message": "Successfully unfollowed.", "user": request.GET.get('user', 0)}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['POST'])
 def follow(request):
 	client = TwitterClient()
 	client.follow(request.GET.get('user', 0))
 	return Response({"message": "Successfully followed.", "user": request.GET.get('user', 0)}, status=status.HTTP_200_OK)
 
+@csrf_exempt
 @api_view(['GET'])
 def search(request):
 	client = TwitterClient()

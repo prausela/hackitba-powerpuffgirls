@@ -3,6 +3,8 @@ import { Container, Card, Button } from 'react-bootstrap';
 import Navigation from './Navigation';
 import UserAndPassword from './Forms';
 import {Switch, Route, useHistory} from 'react-router-dom';
+import TwitterService from './services/twitterService';
+import HomeAdmin from './HomeAdmin';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -28,7 +30,7 @@ const App = () => {
             Topics
           </Route>
           <Route path="/home">
-            Home
+            <HomeAdmin/>
           </Route>
           <Route path="/">
             <Container className="w-50 pt-5">
