@@ -6,6 +6,8 @@ import CreateTweet from './createTweet';
 import DeleteTweets from './deleteTweets';
 import FollowUser from './followUser';
 import UnfollowUser from './unfollowUser';
+import Retweet from './retweet';
+import LikeTweet from './likeTweet';
 
 const TwitterActions = () =>{
 
@@ -22,6 +24,12 @@ const TwitterActions = () =>{
                         </Button>
                         <Button variant="primary" size="lg" onClick={() => handleClick("/create_tweet")}>
                             Create Tweet
+                        </Button>
+                        <Button variant="primary" size="lg" onClick={() => handleClick("/retweet")}>
+                            Retweet
+                        </Button>
+                        <Button variant="primary" size="lg" onClick={() => handleClick("/like_tweet")}>
+                            Like Tweet
                         </Button>
                         <Button variant="primary" size="lg" onClick={() => handleClick("/delete_tweets")}>
                             Delete Tweets

@@ -11,6 +11,8 @@ import TwitterActions from './TwitterActions';
 import DeleteTweets from './deleteTweets';
 import FollowUser from './followUser';
 import UnfollowUser from './unfollowUser';
+import Retweet from './retweet';
+import LikeTweet from './likeTweet';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -46,6 +48,12 @@ const App = () => {
           </Route>
           <Route path="/delete_tweets">
             <DeleteTweets/>
+          </Route>
+          <Route path="/retweet">
+            <Retweet/>
+          </Route>
+          <Route path="/like_tweet">
+            <LikeTweet/>
           </Route>
           <Route path="/follow_user">
             <FollowUser/>
