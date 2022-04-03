@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 import Navigation from './Navigation';
 import UserAndPassword from './Forms';
+import {Switch, Route} from 'react-router-dom';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -16,15 +17,26 @@ const App = () => {
       <main>
         {/*count*/}
         {/*<Button onClick={incrementCounter}/>*/}
-        <Container className="w-50 pt-5">
-          <Card >
-            <Card.Header>Welcome</Card.Header>
-            <Card.Body>
-              <UserAndPassword/>
-              <Button variant="primary">Log In</Button>
-            </Card.Body>
-          </Card>
-        </Container>
+        <Switch>
+          <Route path="/about">
+            about
+          </Route>
+          <Route path="/topics">
+            Topics
+          </Route>
+          <Route path="/">
+            <Container className="w-50 pt-5">
+              <Card >
+                <Card.Header>Welcome</Card.Header>
+                <Card.Body>
+                  <UserAndPassword/>
+                  <Button variant="primary">Log In</Button>
+                </Card.Body>
+              </Card>
+            </Container>
+          </Route>
+        </Switch>
+        
       </main>
       <footer>
 
