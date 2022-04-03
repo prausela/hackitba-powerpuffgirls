@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {Form} from 'react-bootstrap';
 
-const UserAndPassword = () => {
-    const [name, setName] = useState("");
+const UserAndPassword = ({name, setName}) => {
+    
     return(
         <Form>
         <Form.Group className="mb-3" controlId="formGroupEmail">
