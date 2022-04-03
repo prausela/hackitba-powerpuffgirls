@@ -22,5 +22,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/create_tweet', views.create_tweet, name='create_tweet'),
     path('api/delete_tweet', views.delete_tweet, name='delete_tweet'),
+    path('api/like', views.like_tweet, name='like_tweet'),
+    path('api/unlike', views.unlike_tweet, name='unlike_tweet'),
+    path('api/likes', views.see_likes, name='see_likes'),
+    path('api/unretweet', views.unretweet, name='unretweet'),
+    path('api/retweet', views.retweet, name='retweet'),
+    path('api/follow', views.follow, name='follow'),
+    path('api/unfollow', views.unfollow, name='unfollow'),
+    path('api/search', views.search, name='search'),
 
 ]
