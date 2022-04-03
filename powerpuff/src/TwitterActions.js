@@ -4,6 +4,8 @@ import {Switch, Route, useHistory} from 'react-router-dom';
 import ViewTweets from './viewTweets';
 import CreateTweet from './createTweet';
 import DeleteTweets from './deleteTweets';
+import FollowUser from './followUser';
+import UnfollowUser from './unfollowUser';
 
 const TwitterActions = () =>{
 
@@ -24,6 +26,12 @@ const TwitterActions = () =>{
                         <Button variant="primary" size="lg" onClick={() => handleClick("/delete_tweets")}>
                             Delete Tweets
                         </Button>
+                        <Button variant="primary" size="lg" onClick={() => handleClick("/follow_user")}>
+                            Follow User
+                        </Button>
+                        <Button variant="primary" size="lg" onClick={() => handleClick("/unfollow_user")}>
+                            Unfollow User
+                        </Button>
                     </div>
                 </Route>
                 <Route path="/view_tweets">
@@ -34,6 +42,12 @@ const TwitterActions = () =>{
                 </Route>
                 <Route path="/delete_tweets">
                     <DeleteTweets/>
+                </Route>
+                <Route path="/follow_user">
+                    <FollowUser/>
+                </Route>
+                <Route path="/unfollow_user">
+                    <UnfollowUser/>
                 </Route>
             </Switch>
         </div>
