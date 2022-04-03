@@ -1,8 +1,9 @@
 import { create } from 'axios';
 
 let api = create({
-    baseURL : `${process.env.PUBLIC_URL}/api/`,
-    timeout : 10000
+    baseURL : `http://localhost:8000/api`,
+    timeout : 10000,
+    headers: {'Access-Control-Allow-Origin': '*'}
 })
 
 const errorHandler = (error) => {
