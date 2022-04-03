@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .tweets import TwitterClient
 from django.views.decorators.csrf import csrf_exempt
+from .forms import UserForm
 
 @csrf_exempt
 @api_view(['POST'])
@@ -79,3 +80,18 @@ def search(request):
 	return Response({"tweets": client.search_recent(request.GET.get('query', ""))}, status=status.HTTP_200_OK)
 
 
+#ADMIN ENDPOINTS
+
+@api_view(['POST'])
+def new_user(request):
+	form = UserForm(request.POST)
+	instance = form.save(commit=False)
+	instance.save()
+	return Response({"message": "Successfully created.", "user": request.GET.get('user', 0)}, status=status.HTTP_200_OK)
+
+
+@api_view(['DELETE'])
+def delete_user(request):
+	user = request.GET.get('user', 0)
+	User.objects.filter(username=user).delete()
+	return Response({"message": "Successfully deleted.", "user": request.GET.get('user', 0)}, status=status.HTTP_200_OK)
