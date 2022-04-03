@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hackitba-powerpuffgirls/static/css/main.38be36b0.css",
-    "main.js": "/hackitba-powerpuffgirls/static/js/main.a249886b.js",
-    "static/js/377.508e3767.chunk.js": "/hackitba-powerpuffgirls/static/js/377.508e3767.chunk.js",
+    "main.css": "/hackitba-powerpuffgirls/static/css/main.6f40b2f3.css",
+    "main.js": "/hackitba-powerpuffgirls/static/js/main.ba6ac1fa.js",
+    "static/js/377.a99b979b.chunk.js": "/hackitba-powerpuffgirls/static/js/377.a99b979b.chunk.js",
     "service-worker.js": "/hackitba-powerpuffgirls/service-worker.js",
     "index.html": "/hackitba-powerpuffgirls/index.html",
-    "main.38be36b0.css.map": "/hackitba-powerpuffgirls/static/css/main.38be36b0.css.map",
-    "main.a249886b.js.map": "/hackitba-powerpuffgirls/static/js/main.a249886b.js.map",
-    "377.508e3767.chunk.js.map": "/hackitba-powerpuffgirls/static/js/377.508e3767.chunk.js.map"
+    "main.6f40b2f3.css.map": "/hackitba-powerpuffgirls/static/css/main.6f40b2f3.css.map",
+    "main.ba6ac1fa.js.map": "/hackitba-powerpuffgirls/static/js/main.ba6ac1fa.js.map",
+    "377.a99b979b.chunk.js.map": "/hackitba-powerpuffgirls/static/js/377.a99b979b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38be36b0.css",
-    "static/js/main.a249886b.js"
+    "static/css/main.6f40b2f3.css",
+    "static/js/main.ba6ac1fa.js"
   ]
 }
