@@ -3,6 +3,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .tweets import TwitterClient
+from .forms import UserForm
+
+#TWITTER ENDPOINTS
 
 @api_view(['POST'])
 def create_tweet(request):
@@ -68,3 +71,18 @@ def search(request):
 	return Response({"tweets": client.search_recent(request.GET.get('query', ""))}, status=status.HTTP_200_OK)
 
 
+#ADMIN ENDPOINTS
+
+@api_view(['POST'])
+def new_user(request):
+	form = UserForm(request.POST)
+	instance = form.save(commit=False)
+	instance.save()
+	return Response({"message": "Successfully created.", "user": request.GET.get('user', 0)}, status=status.HTTP_200_OK)
+
+
+@api_view(['DELETE'])
+def delete_user(request):
+	user = request.GET.get('user', 0)
+	User.objects.filter(username=user).delete()
+	return Response({"message": "Successfully deleted.", "user": request.GET.get('user', 0)}, status=status.HTTP_200_OK)
